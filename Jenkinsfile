@@ -20,18 +20,12 @@ pipeline{
     }
   }
 
-  stage('Test') {
+  stage('Archive') {
     steps {
-      sh 'echo "test run successful"'
+      sh 'echo "test run successful" > output.txt'
+      archiveArtifacts artifacts:'output.txt'
     }
-  }
-    stage('Archive Artifacts') {
-       steps {
-        sh 'echo "first artifacts" > output.txt'
-        archiveArtifacts artifacts:'output.txt',
-              
-  }
-}
+ 
 
 
 }
