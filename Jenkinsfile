@@ -26,10 +26,10 @@ pipeline{
     }
   }
     stage('Archive Artifacts') {
-  steps {
-    sh 'echo "first artifacts" > output.txt'
-    archiveArtifacts artifacts:'output.txt',
-              fingerprint:true
+       steps {
+        sh 'echo "first artifacts" > output.txt'
+        archiveArtifacts artifacts:'output.txt',
+              
   }
 }
 
