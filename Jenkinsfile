@@ -25,6 +25,14 @@ pipeline{
       sh 'echo "test run successful"'
     }
   }
+    stage('Archive Artifacts') {
+  steps {
+    sh 'echo "first artifacts" > output.txt'
+    archiveArtifacts artifacts:'output.txt',
+              fingerprint:true
+  }
+}
+
 
 }
 post {
